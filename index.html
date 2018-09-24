@@ -10,14 +10,16 @@
 </head>
 
 <body>
-  <h1>Counting Word Frequency</h1>
+  <header>
+    <h1>Word Frequency Counter</h1>
+    <h4>in Javascript using split, forEach, map, & sort</h4>
+  </header>
 
-  <p>Paste text below for word frequency count...</p>
+  <p id="instructions">Paste your text below for word frequency count...</p>
   <textarea rows="6" name="textBox" id="textBoxId"></textarea>
-  <button onclick="getText()">Count Words</button>
-
-  <div><br>
-  </div>
+  <button onclick="getText()" id="countWordsButton">Count words occurring more than once...</button>
+  <h4 id="resultsTitle">Count Results</h4>
+  <textarea rows="26" cols="1" name="outputBox" id="outputBoxId"></textarea>
 
   <script src="app.js"></script>
 </body>

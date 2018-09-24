@@ -1,38 +1,38 @@
 // Counting word frequency
-var div = document.querySelector('div');
-var textInput = document.getElementById('textBoxId');
-var textValue;
-div.innerHTML = '';
+let output = document.getElementById('outputBoxId');
+let textInput = document.getElementById('textBoxId');
+let textValue;
+output.innerHTML = '';
 
 function getText() {
   textValue = textInput.value;
 
-  var wordArray = splitWords(textValue);
-  var wordMap = makeWordMap(wordArray);
-  var finalWordArray = sortByCount(wordMap);
-  var len = finalWordArray.length;
+  let wordArray = splitWords(textValue);
+  let wordMap = makeWordMap(wordArray);
+  let finalWordArray = sortByCount(wordMap);
+  let len = finalWordArray.length;
 
   //display results
   for (let i = 0; i < len; i++) {
     if (finalWordArray[i].total > 1) {
-      div.innerHTML =
-        div.innerHTML +
+      output.innerHTML =
+        output.innerHTML +
         ' ' +
         finalWordArray[i].name +
         ' = ' +
         finalWordArray[i].total +
-        '<br>';
+        '\n';
     } else break;
   }
 }
 
 function splitWords(text) {
-  var wordArray = text.split(/\s+/);
+  let wordArray = text.split(/\s+/);
   return wordArray;
 }
 
 function makeWordMap(wordArray) {
-  var wordsMap = {};
+  let wordsMap = {};
   wordArray.forEach(function(key) {
     if (wordsMap.hasOwnProperty(key)) {
       wordsMap[key]++;
@@ -44,7 +44,7 @@ function makeWordMap(wordArray) {
 }
 
 function sortByCount(wordsMap) {
-  var finalWordArray = [];
+  let finalWordArray = [];
   finalWordArray = Object.keys(wordsMap).map(function(key) {
     return {
       name: key,
